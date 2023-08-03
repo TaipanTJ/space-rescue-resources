@@ -23,7 +23,8 @@ class Asteroid(RoomObject):
         self.set_direction(angle, 10)
 
         # register events
-        self.register_collision_object("Ship")        
+        self.register_collision_object("Ship")       
+        self.register_collision_object("Laser")       
 
     def step(self):
         """

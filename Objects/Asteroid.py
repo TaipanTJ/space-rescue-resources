@@ -1,4 +1,5 @@
 from GameFrame import RoomObject, Globals
+from Objects.Laser import Laser
 import random
 
 class Asteroid(RoomObject):
@@ -57,3 +58,5 @@ class Asteroid(RoomObject):
         
         if other_type == "Ship":
             self.room.running = False
+        elif other_type == "Laser":
+            self.delete_object(self)

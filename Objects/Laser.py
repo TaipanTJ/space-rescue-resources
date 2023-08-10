@@ -27,7 +27,7 @@ class Laser(RoomObject):
         """
         Determine what happens to the laser on each tick of the game clock
         """
-        self.outside_of_room()
+        self.outside_of_room()  
         
     def outside_of_room(self):
         """

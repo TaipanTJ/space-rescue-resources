@@ -17,11 +17,11 @@ class Score(TextObject):
         self.colour = (255,255,255)
         self.bold = False
         self.update_text()
-
-        def update_score(self, change):
-            """
-            Updates the score and redraws the text
-            """
-            Globals.SCORE += change
-            self.text = str(Globals.SCORE)
-            self.update_text()
+        
+    def update_score(self, change):
+        """
+        Updates the score and redraws the text
+        """
+        Globals.SCORE += change
+        self.text = str(Globals.SCORE)
+        self.update_text()

@@ -1,5 +1,6 @@
 from GameFrame import RoomObject, Globals
 from Objects.Laser import Laser
+from Objects.Hud import Score
 import random
 
 class Asteroid(RoomObject):
@@ -7,7 +8,11 @@ class Asteroid(RoomObject):
     A class for Zorks danerous obstacles
     """
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> parent of dcd1f98 (Update Asteroid.py)
     def __init__(speed, self, room, x, y):
 =======
     
@@ -26,7 +31,11 @@ class Asteroid(RoomObject):
         # set travel direction
         angle = random.randint(135,225)
 <<<<<<< HEAD
+<<<<<<< HEAD
         self.set_direction(angle, range(10-20))
+=======
+        self.set_direction(angle, speed)
+>>>>>>> parent of dcd1f98 (Update Asteroid.py)
         
         # register events
         self.register_collision_object("Ship")       
@@ -38,6 +47,12 @@ class Asteroid(RoomObject):
         self.register_collision_object("Ship")       
         self.register_collision_object("Laser")       
 >>>>>>> parent of 7e1276a (asteroid speed)
+
+    def speed_accellerate(speed, Score):
+        if Score <= 100:
+            speed = 10
+        elif Score > 100:
+            speed = 15
 
     def step(self):
         """

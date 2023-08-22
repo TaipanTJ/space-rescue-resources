@@ -40,7 +40,6 @@ class Lives(RoomObject):
         # set image
         self.lives_icon = []
         # load the various lives images into a live list
-        Globals.LIVES = 3
         for index in range(6):
             self.lives_icon.append(self.load_image(f"Lives_frames/Lives_{index}.png"))
         self.update_image()

@@ -6,8 +6,13 @@ class Asteroid(RoomObject):
     """
     A class for Zorks danerous obstacles
     """
+<<<<<<< HEAD
 
     def __init__(speed, self, room, x, y):
+=======
+    
+    def __init__(self, room, x, y):
+>>>>>>> parent of 7e1276a (asteroid speed)
         """
         Initialise the Asteroid object
         """
@@ -20,11 +25,19 @@ class Asteroid(RoomObject):
 
         # set travel direction
         angle = random.randint(135,225)
+<<<<<<< HEAD
         self.set_direction(angle, range(10-20))
         
         # register events
         self.register_collision_object("Ship")       
         self.register_collision_object("Laser")    
+=======
+        self.set_direction(angle, 10)
+
+        # register events
+        self.register_collision_object("Ship")       
+        self.register_collision_object("Laser")       
+>>>>>>> parent of 7e1276a (asteroid speed)
 
     def step(self):
         """

@@ -1,59 +1,29 @@
 from GameFrame import RoomObject, Globals
-from Objects.Laser import Laser
-from Objects.Hud import Score
 import random
 
 class Asteroid(RoomObject):
     """
     A class for Zorks danerous obstacles
     """
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> parent of dcd1f98 (Update Asteroid.py)
-    def __init__(speed, self, room, x, y):
-=======
     
     def __init__(self, room, x, y):
->>>>>>> parent of 7e1276a (asteroid speed)
         """
         Initialise the Asteroid object
         """
         # include attributes and methods from RoomObject
-        RoomObject.__init__(self, room, x, y)
-
+        RoomObject.__init__(self,room, x, y)
+        
         # set image
         image = self.load_image("asteroid.png")
         self.set_image(image,50,49)
-
+        
         # set travel direction
         angle = random.randint(135,225)
-<<<<<<< HEAD
-<<<<<<< HEAD
-        self.set_direction(angle, range(10-20))
-=======
-        self.set_direction(angle, speed)
->>>>>>> parent of dcd1f98 (Update Asteroid.py)
+        self.set_direction(angle, 10)
         
         # register events
-        self.register_collision_object("Ship")       
-        self.register_collision_object("Laser")    
-=======
-        self.set_direction(angle, 10)
-
-        # register events
-        self.register_collision_object("Ship")       
-        self.register_collision_object("Laser")       
->>>>>>> parent of 7e1276a (asteroid speed)
-
-    def speed_accellerate(speed, Score):
-        if Score <= 100:
-            speed = 10
-        elif Score > 100:
-            speed = 15
-
+        self.register_collision_object("Ship")
+        
     def step(self):
         """
         Determines what happens to the asteroid on each tick of the game clock
@@ -71,7 +41,7 @@ class Asteroid(RoomObject):
         elif self.y > Globals.SCREEN_HEIGHT - self.height:
             self.y = Globals.SCREEN_HEIGHT - self.height
             self.y_speed *= -1
-
+            
     def outside_of_room(self):
         """
         removes asteroid that have exited the room
@@ -79,7 +49,7 @@ class Asteroid(RoomObject):
         if self.x + self.width < 0:
             print("asteroid deleted")
             self.room.delete_object(self)
-
+            
     def handle_collision(self, other, other_type):
         """
         Handles the collision events for the Asteroid

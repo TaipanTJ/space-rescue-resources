@@ -1,10 +1,9 @@
 from GameFrame import RoomObject, Globals
-
+     
 class Laser(RoomObject):
     """
     Class for the lasers shot by the Ship
     """
-    
     def __init__(self, room, x, y):
         """
         Inistialise the laser

@@ -11,6 +11,8 @@ class Score(TextObject):
         # include attributes and methods from TextObject
         TextObject.__init__(self, room, x, y, text)
         
+        Globals.SCORE = 0
+        self.update_text
         # set values         
         self.size = 60
         self.font = 'Arial Black'
